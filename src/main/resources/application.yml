@@ -1,0 +1,25 @@
+## Optional, default value: 8082
+server:
+  port: 8082
+
+## Solace properties
+solace:
+  host: tcps:<broker-host>:<port> # e.g. tcps:localhost:55555
+  messageVpn: <vpn-name>
+  solaceAuthMode: BASIC
+  clientUsername: <username>
+  clientPassword: <password>
+  
+## Optional, default value: 8554
+rtsp:
+  serverPort: 8554
+  bufferSize: 250000
+
+
+# Sink Cascade properties
+sink:
+  patterns:
+    videoCascadeTopic: cctv/v1/src/cascade/cam/{cameraId}
+
+## RTSP Server URI bases on the "rtsp.serverPort" and "sink.patterns.videoCascadeTopic" configured above.
+## So RTSP Server URI is: rtsp://<host>:8554/cctv/v1/src/cascade/cam/{cameraId}
